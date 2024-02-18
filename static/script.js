@@ -1,8 +1,8 @@
 let currentAnswer;
 
 function generateQuestion() {
-    const num1 = Math.floor(Math.random() * 100) + 1; // Random number between 1 and 10
-    const num2 = Math.floor(Math.random() * 100) + 1;
+    const num1 = Math.floor(Math.random() * 10) + 1; // Random number between 1 and 10
+    const num2 = Math.floor(Math.random() * 10) + 1;
     currentAnswer = num1 + num2; // For addition questions
     document.getElementById('question').innerHTML = `What is ${num1} + ${num2}?`;
 }

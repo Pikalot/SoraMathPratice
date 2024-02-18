@@ -12,11 +12,12 @@ body, html {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    overflow: hidden;
 }
 
 input[type="number"] {
-    padding: 10px;
-    margin: 10px 0;
+    padding: 12px;
+    margin: 12px 0;
     border-radius: 5px;
     border: 1px solid #5a0a96;
 }
@@ -32,4 +33,29 @@ button {
 
 button:hover {
     background-color: #45a049;
+}
+
+
+/* Media query for devices with a width of up to 768px (typical tablet breakpoint) */
+@media (max-width: 768px) {
+  #cheerImage {
+    width: 80%; /* On smaller screens, you might want to limit the width to 80% */
+    /* You can adjust this percentage based on your design preferences */
+  }
+}
+
+/* Media query for devices with a width of up to 480px (typical phone breakpoint) */
+@media (max-width: 480px) {
+  #cheerImage {
+    width: 90%; /* On very small screens, the image can take up the full width */
+  }
+}
+
+.responsive-image {
+  max-width: 100%; /* limits image width to the container width */
+  max-height: 100vh; /* limits image height to the viewport height */
+  object-fit: contain; /* makes sure the image is scaled correctly within its box */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }

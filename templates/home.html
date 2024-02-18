@@ -13,8 +13,11 @@
     <input type="number" id="answer" placeholder="Enter your answer">
     <button onclick="checkAnswer()">Submit</button>
     <div id="feedback"></div>
+    <div id="result" style="font-weight: bold; color: purple"></div>
     <img id="cheerImage" class="responsive-image" src="static/Nezuko_correct.gif" style="display: none;" alt="Cheering Image"/>
-    
+    <audio id="correctSound" src="static/correct-sound.wav" preload="auto"></audio>
+    <audio id="wrongSound" src="static/wrong-sound.wav" preload="auto"></audio>
+    <audio id="passSound" src="static/pixel-song.wav" preload="auto"></audio>
   </div>
   <script src="static/script.js"></script>
 </body>

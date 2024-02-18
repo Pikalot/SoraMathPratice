@@ -19,12 +19,21 @@ body, html {
     overflow: hidden;
 }
 
+.input-wrapper {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    width: 100%; /* Take up full width to ensure centering effect */
+}
+
 input[type="number"] {
     padding: 12px;
     margin: 12px 0;
     border-radius: 5px;
     border: 1px solid #5a0a96;
     font-size: 18px;
+    /* Ensure the input doesn't stretch too wide within the flex container */
+    max-width: 150px; /* Adjust this value based on your design preference */
+    width: 100%; /* Allows the input field to be responsive within the flex container */
 }
 
 button {

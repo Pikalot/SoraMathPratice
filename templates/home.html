@@ -1,32 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Math Practice for Sora</title>
-  <link rel="stylesheet" href="static/style.css">
-</head>
-<body>
-  <div class="container">
-    <h1>Math Practice for Sora</h1>
-    <!-- Navigation for different math sections -->
-    <div class="math-sections">
-      <button onclick="generateAdditionQuestion()">Addition</button>
-      <button onclick="generateSubtractionQuestion()">Subtraction</button>
-      <button onclick="generateTrickyQuestion()">Comparison</button>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Math Practice for Sora</title>
+    <link rel="stylesheet" href="static/style.css">
+  </head>
+  
+  <body>
+    <div class="container">
+      <h1><b>Math Practice for Sora</b></h1>
+      <!-- Navigation for different math sections -->
+      <div class="math-sections">
+        <button onclick="generateAdditionQuestion()">Addition</button>
+        <button onclick="generateSubtractionQuestion()">Subtraction</button>
+        <!-- <a href="/comparison.html" class="button">Comparison</a> -->
+        <a href="/comparison"><button>Comparison</button></a>
+      </div>
+      
+      <div id="question" style="font-size: 24px"> </div>
+      <input type="number" id="answer" placeholder="Enter your answer">
+      <button onclick="checkAnswer()">Submit</button>
+      <div id="feedback"></div>
+      <div id="result" style="font-weight: bold; color: purple"></div>
+      <img id="cheerImage" class="responsive-image" src="static/Nezuko_correct.gif" style="display: none;" alt="Cheering Image"/>
+      <img id="subImage" class="responsive-image" src="static/kanao.gif" style="display: none;" alt="Cheering Sub Image"/>
+      <audio id="correctSound" src="static/correct-sound.wav" preload="auto"></audio>
+      <audio id="wrongSound" src="static/wrong-sound.wav" preload="auto"></audio>
+      <audio id="passSound" src="static/pixel-song.wav" preload="auto"></audio>
     </div>
-    
-    <div id="question" style="font-size: 24px"> </div>
-    <input type="number" id="answer" placeholder="Enter your answer">
-    <button onclick="checkAnswer()">Submit</button>
-    <div id="feedback"></div>
-    <div id="result" style="font-weight: bold; color: purple"></div>
-    <img id="cheerImage" class="responsive-image" src="static/Nezuko_correct.gif" style="display: none;" alt="Cheering Image"/>
-    <img id="subImage" class="responsive-image" src="static/kanao.gif" style="display: none;" alt="Cheering Sub Image"/>
-    <audio id="correctSound" src="static/correct-sound.wav" preload="auto"></audio>
-    <audio id="wrongSound" src="static/wrong-sound.wav" preload="auto"></audio>
-    <audio id="passSound" src="static/pixel-song.wav" preload="auto"></audio>
-  </div>
-  <script src="static/script.js"></script>
-</body>
+    <script src="static/script.js"></script>
+  </body>
 </html>

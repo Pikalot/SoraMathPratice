@@ -15,8 +15,8 @@ function generateAdditionQuestion() {
 
 function generateSubtractionQuestion() {
     lastQuestion = 'subtraction';
-    const num1 = Math.floor(Math.random() * 100) + 1; // Random number between 1 and 10
-    const num2 = Math.floor(Math.random() * 100) + 1;
+    let num1 = Math.floor(Math.random() * 100) + 1; // Random number between 1 and 10
+    let num2 = Math.floor(Math.random() * 100) + 1;
     if (num2 > num1) { // Swap if num 2 is greated than num 1
         const temp = num1;
         num1 = num2;
@@ -74,6 +74,7 @@ function checkAnswer() {
       totalAddCount = 0;
     }, 9000);  
   }
+  
   if (correctSubCount >= 5) {
     // User has answered 5 questions correctly
     passScore = correctSubCount / totalSubCount * 100;
@@ -117,5 +118,4 @@ function generateLastQuestion() {
   }
 }
 
-window.onload = generateQuestion; // Generate the first question when the page loads
 document.getElementById('cheerImage').style.display = 'none';

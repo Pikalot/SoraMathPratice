@@ -29,7 +29,7 @@ function generateSubtractionQuestion() {
 function checkAnswer() {
   const userAnswer = parseInt(document.getElementById('answer').value);
   const cheerImage = document.getElementById('cheerImage');
-  const submitButton = document.querySelector('button'); // Assuming there is only one button, otherwise give it an ID and select by ID
+  const submitButton = document.querySelector('button'); 
   const answerInput = document.getElementById('answer');
 
   if (userAnswer === currentAnswer) {
@@ -53,7 +53,7 @@ function checkAnswer() {
   if (lastQuestion === 'subtraction') {
     totalSubCount++;
   }
-  if (correctAddCount >= 5) {
+  if (correctAddCount == 5) {
     // User has answered 5 questions correctly
     passScore = correctAddCount / totalAddCount * 100;
     document.getElementById('feedback').innerHTML = 'Awesome! Your score is: ';
@@ -62,6 +62,7 @@ function checkAnswer() {
     answerInput.disabled = true; // Disable the input field
     submitButton.disabled = true; // Disable the submit button
     document.getElementById('passSound').play(); // Play the correct pass song
+    correctAddCount = 0;  // Reset count
 
     setTimeout(function() {
       cheerImage.style.display = 'none'; // Hide the cheering image after 9 seconds
@@ -75,7 +76,7 @@ function checkAnswer() {
     }, 9000);  
   }
   
-  if (correctSubCount >= 5) {
+  if (correctSubCount == 5) {
     // User has answered 5 questions correctly
     passScore = correctSubCount / totalSubCount * 100;
     document.getElementById('feedback').innerHTML = 'You will make it to a Hashira soon! Your score is: ';
@@ -84,6 +85,7 @@ function checkAnswer() {
     answerInput.disabled = true; // Disable the input field
     submitButton.disabled = true; // Disable the submit button
     document.getElementById('passSound').play(); // Play the correct pass song
+    correctSubCount = 0;  // Reset count
 
     setTimeout(function() {
       subImage.style.display = 'none'; // Hide the cheering image after 9 seconds

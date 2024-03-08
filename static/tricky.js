@@ -6,17 +6,49 @@ let totalCount = 0;
 let correctSubCount = 0;
 let totalSubCount = 0;
 let lastQuestion = '';
+let num1;
+let num2;
+let num3;
+let num4;
 
 function generateQuestion() {
-  lastQuestion = 'addition';
-  const num1 = Math.floor(Math.random() * 20) + 1; // Random number between 1 and 20
-  const num2 = Math.floor(Math.random() * 20) + 1;
-  const num3 = Math.floor(Math.random() * 20) + 1; // Random number between 1 and 20
-  const num4 = Math.floor(Math.random() * 20) + 1;
-  currentAnswer1 = num1 + num2; // For addition questions
-  currentAnswer2 = num3 + num4;
-  document.getElementById('question1').innerHTML = `What is: ${num1} + ${num2}?`;
-  document.getElementById('question2').innerHTML = `And, what is ${num3} + ${num4}?`;
+  let random = Math.floor(Math.random() * 2);
+  switch (random) {
+    case 0: {
+      //lastQuestion = 'subtraction';
+      num1 = Math.floor(Math.random() * 20) + 1; // Random number between 1 and 20
+      num2 = Math.floor(Math.random() * 20) + 1;
+      num3 = Math.floor(Math.random() * 20) + 1; // Random number between 1 and 20
+      num4 = Math.floor(Math.random() * 20) + 1;
+      if (num2 > num1) { // Swap if num 2 is greated than num 1
+          const temp = num1;
+          num1 = num2;
+          num2 = temp;
+      }
+      if (num4 > num3) { // Swap if num 2 is greated than num 1
+          const temp = num4;
+          num4 = num3;
+          num3 = temp;
+      }
+      currentAnswer1 = num1 - num2; // For subtraction questions
+      currentAnswer2 = num3 - num4;
+      document.getElementById('question1').innerHTML = `What is: ${num1} - ${num2}?`;
+      document.getElementById('question2').innerHTML = `And, what is ${num3} - ${num4}?`;
+      break;
+      }
+    case 1: { 
+      //lastQuestion = 'addition';
+      num1 = Math.floor(Math.random() * 20) + 1; // Random number between 1 and 20
+      num2 = Math.floor(Math.random() * 20) + 1;
+      num3 = Math.floor(Math.random() * 20) + 1; // Random number between 1 and 20
+      num4 = Math.floor(Math.random() * 20) + 1;
+      currentAnswer1 = num1 + num2; // For addition questions
+      currentAnswer2 = num3 + num4;
+      document.getElementById('question1').innerHTML = `What is: ${num1} + ${num2}?`;
+      document.getElementById('question2').innerHTML = `And, what is ${num3} + ${num4}?`;
+      break;
+   }  
+  }
   
   if (currentAnswer1 < currentAnswer2) {
     largeNumber = currentAnswer2;
@@ -61,6 +93,7 @@ function checkAnswer() {
     answerInput2.disabled = true;
     submitButton.disabled = true; // Disable the submit button
     document.getElementById('passSound').play(); // Play the correct pass song
+    correctCount = 0; // Reset count
   }
 
   generateQuestion();
